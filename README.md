@@ -1,7 +1,7 @@
 # 🌍 Global Mental Health Trends: SQL Analysis Project  
 **Identifying Critical Anxiety Disorder Gaps (1990-2019)**  
 
-![Anxiety Trends vs. Treatment Coverage](outputs/visualization.png)  
+
 
 ## 📌 **Project Motivation**  
 **Why This Data?**  
@@ -38,7 +38,8 @@ This was the first query I ran on the data, which found ten countries with the h
 |---------|------|-----------------|  
 |  Uganda | 2019 | 6.5845194 |  
 |  Palestine | 2019 | 6.5845194 |  
-|  Greenland | 2019 | 6.5845194 |  
+|  Greenland | 2019 | 6.5845194 |   
+
 etc...  
 
 
@@ -88,6 +89,15 @@ END
 #### 🔧 Other things I added  
 I also added some data filtering such as: avoiding dividing by zero and excluding group aggregates incase any were included.
 
+#### **Findings:**  
+| Country | Anxiety_1990 | Anxiety_Latest | Latest_Year | Absolute_Change | Percentage_Change | Trend_Severity | Data_Quality |   
+|---------|--------------|----------------|-------------|-----------------| ------------------|----------------|----------------| 
+|Brazil|	5.8948245|	7.410114	|2019	|1.5152895	|25.71%|	Moderate Increase	|Normal Baseline
+Mexico	|2.8834388	|3.5132816	|2019	|0.6298428	|21.84%	|Minimal Change	|Normal Baseline
+America (IHME GBD)|	4.9763203|	5.4921436|	2019|	0.5158233	|10.37%	|Minimal Change|	Normal Baseline
+
+etc...  
+
 ### **4. Further SQL Queries I carried out**  
 
 #### *[Anxiety Trends in Countries](https://github.com/cal-hunter/Mental-Health-SQL-Queries/blob/main/Anxiety%20Trends%20in%20Countries.sql)*  
@@ -116,6 +126,15 @@ In this query I paired the anxiety trends I had already established, with the la
 1) With there being only a select few of data entries to be used I had to somehow work out how to make my query ensure it was only using the ones available.
 2) On the first try it only displayed two countries repeating, so I had to figure out how to remove duplicates.
 3) Initially the parameters I used were too loose, so no countries were flagging up as critical or high risk, they were all just review, this obviously wasn't what I'd hoped for.
+
+#### **Findings:**  
+| Country | Anxiety_Trend | Absolute_Change | Untreated_Data | Priority |        
+|---------|---------------|-----------------|----------------|----------| 
+|Mexico|	2.8834388% → 3.5132816%	|0.6298428	|83.9% (2002)|	⭐ CRITICAL
+United States	|5.241197% → 5.6977477%	|0.4565507	|57.7% (2003)	|⚠️ HIGH RISK
+Iraq|	5.0469055% → 5.33799%	|0.291084499999999	|89% (2007)	|Review  
+
+etc...  
 
 
 
